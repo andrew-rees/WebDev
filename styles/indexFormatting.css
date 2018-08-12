@@ -12,3 +12,9 @@ p { /*applies to any <p></p> element */
 body { /*applies to the body (ie all the visible doc) */
     color: green;
 }
+
+body {
+  background-image: url("../images/Mist.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
