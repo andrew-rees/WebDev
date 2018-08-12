@@ -1,0 +1,111 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+body {
+    background: lemonchiffon url(C:\Work\Training\WebDev\images\Mist.jpg) 10px 10px repeat-x fixed;
+}
+
+head {
+    
+}
+
+span {
+    border: 1px solid black;
+    background-color: lime;
+  }
+
+div {
+    border: 10px dashed darkgreen;
+}
+
+h1 {
+    color: blue;
+    background-color: yellow;
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+}
+  
+p {
+    color: black;
+}
+
+li {
+    /*This is shorthand and reads the values in a certain order, in this case top, right, bottom left*/
+    padding: 5px 5px 5px 5px;
+}
+
+/*IDs*/
+
+#first-list {
+    background-color: mediumslateblue;
+}
+
+#first {
+    color: gold;
+    text-transform: uppercase;
+}
+
+#second {
+    color: silver;
+}
+
+#third {
+    color: brown;
+}
+
+/*CLASSES*/
+
+.first { /*This will make any class with 'first' in it with underline*/
+    text-decoration: underline;
+}
+
+.second { /*This will make any class with 'second' in it with strikethrough*/
+    text-decoration: line-through;
+}
+
+.done { /*This will make any class with 'done' in it in bold*/
+    font-weight: bold;
+}
+
+.thirdone {
+    font-size: 10px;
+}
+
+/*ATTRIBUTES*/
+
+
+/* All elements with the attribute "data-vegetable"
+   are given green text */
+   [data-vegetable] {
+    color: green;
+  }
+  
+  /* All elements with the attribute "data-vegetable"
+     with the exact value "liquid" are given a golden
+     background color */
+  [data-vegetable="liquid"] {
+    color: goldenrod;
+  }
+  
+  /* All elements with the attribute "data-vegetable",
+     containing the value "spicy", even among others,
+     are given a red text color */
+  [data-vegetable~="spicy"] {
+    color: red;
+  }
+
+  [data-meat] {
+    color: pink;
+  }
+
+  [data-meat="poultry"] {
+      background-color: blue;
+  }
+
+  [data-quantity="700g"] {
+      font-weight: bold;
+  }
