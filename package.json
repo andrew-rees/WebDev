@@ -1,0 +1,25 @@
+{
+  "name": "webdev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.9.3",
+    "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node sass test.scss test.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-rees/WebDev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew-rees/WebDev/issues"
+  },
+  "homepage": "https://github.com/andrew-rees/WebDev#readme"
+}

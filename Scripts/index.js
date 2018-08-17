@@ -1,0 +1,1 @@
+//will be js file that relates to index.html eg button pressing magic
