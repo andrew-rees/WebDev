@@ -1,18 +1,3 @@
-h1 { /*applies to the header h1 */
-    color: blue;
-    background-color: yellow;
-    border: 1px solid black;
-  }
-  
-p { /*applies to any <p></p> element */
-    color: red;
-    background-color: aqua;
-  }
-
-body { /*applies to the body (ie all the visible doc) */
-    color: green;
-}
-
 body {
   background-image: url("../images/Mist.jpg");
   background-repeat: no-repeat;

@@ -1,35 +1,96 @@
-$defaultFont: Verdana, Geneva, sans-serif;
+$defaultFont: 10pt Verdana,
+Geneva,
+sans-serif;
 $defaultFontSize: 10pt;
-$backgroundColor: #faebd7;
-
+$backgroundColor: rgb(250, 235, 215);
 #header {
-    font: bold small-caps normal $defaultFontSize+10pt Verdana, Geneva, sans-serif;
-    /*font-style font-variant font-weight font-size/line-height font-family*/
-  }
+    /*applies to the id header*/
+    font: $defaultFont;
+    font-weight: bold;
+    font-size: $defaultFont + 10pt
+}
 
+h1 {
+    /*applies to the header h1 */
+    color: RGB(88 80 80);
+    background-color: darken($backgroundColor, 20%);
+    font-variant: small-caps;
+}
 
-h1 { /*applies to the header h1 */
-    color: blue;
-    border: 1px solid black;
-    background-color: darken($backgroundColor, 50%)
-    }
+h2:hover {
+    /*applies when hovering over Contents*/
+    color: rgb(250, 235, 215);
+}
 
 html {
+    /*applies to all*/
     background-color: $backgroundColor;
 }
 
 body {
-    font-family: $defaultFont;
+    /*applies to the body*/
+    font: $defaultFont;
     color: black;
     font-size: $defaultFontSize;
 }
 
-.Title { /*applies to all classes containing word title*/
-    font-weight: bold;
-    font-size: $defaultFontSize + 4pt;
-  }
-
 .Poetry {
-    font-style: italic;
+    /*applies to all classes containing word Poetry*/
+    background-color: darken($backgroundColor, 5%);
+    .Title {
+        /*applies to all classes containing word Title*/
+        font: {
+            /*property nesting*/
+            weight: bold;
+            size: $defaultFontSize + 4pt;
+        }
+    }
+    ;
+    .Verse {
+        /*applies to class Verse*/
+        font-style: italic;
+    }
 }
 
+img {
+    opacity: 1.0;
+}
+
+img:hover {
+    opacity: 0.5;
+}
+
+.Footer:hover {
+    /*applies when hovering over Contents*/
+    color: antiquewhite; }
+
+/*.Contents {}*/
+
+:visited {
+    color: darken($backgroundColor, 30%);
+}
+
+:link {
+    color: RGB(88 80 80);
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 20px;
+}
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: darken($backgroundColor, 40%);
+    opacity: 0.8;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding: 20px 10px;
+    :visited {
+        color: darken($backgroundColor, 70%);
+    }
+}

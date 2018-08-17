@@ -3,19 +3,49 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Andrew's Haiku Page</title>
-    <link href="..\styles\tableFormatting.css" rel="stylesheet" type="text/css">
+    <title>Haikus</title>
+    <link href="..\styles\haikusFormatting.css" rel="stylesheet" type="text/css">
     <link href="..\styles\defaultFormatting.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="Poetry Haikus">
-    <h1>This page is dedicated exclusively and with all my heart to my haikus.</h1>
-    <p>
-        A Haiku is a Japanese poem or something like that. It's short because the Japanese don't screw about with long sentences, because they just get stuff done
-    </p>
+<body class="Poetry Haikus" id="Poetry">
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <h2>Contents</h2>
+        <ul title="How to get to the poms">
+            <li>
+                <a href="../index.html" title="You're already here, so by bother??">Index</a>
+            </li>
+            <li>
+                <a href="haikus.html">Haikoos</a>
+            </li>
+            <li>
+                <a href="Long Form.html">Long Form Poetry</a>
+            </li>
+            <li>
+                <a href="../contact.html">Contacts</a>
+            </li>
+            <li>
+                <a href="../messing.html">Messing - click here at your peril</a>
+            </li>
+            <li>
+                <a href="footeh.html">Footbyball kicking things</a>
+            </li>
+        </ul>
+    </div>
 
-    <div id="Haiku One">
-        <table>
+    <div class="main">
+        <h1>This page is dedicated exclusively and with all my heart to my haikus.</h1>
+        <p>
+            A Haiku is a Japanese poem or something like that. It's short because the Japanese don't screw about with long sentences,
+            because they just get stuff done
+        </p>
+
+        <div id="Haiku One">
+            <p class="Title">
+                Trees make tables
+            </p>
+            <table class="Verse">
                 <colgroup>
                     <col>
                     <col style="background-color: bisque">
@@ -39,12 +69,88 @@
                     <th>How long</th>
                     <td>will you</td>
                     <td>stand,</td>
-                    <td>my fine 
+                    <td>my fine
                 </tr>
             </table>
+        </div>
+
+        <div id="Haiku Two">
+            <p class="Title">
+                Cross
+            </p>
+            <p class="Verse">
+                The signpost looked just
+                <br> How it should; why not point to
+                <br> Many places at once?
+            </p>
+        </div>
+        <div id="Haiku Three">
+            <p class="Title">
+                Do you
+            </p>
+            <p class="Verse">
+                Do you rest on grass
+                <br> On a cool morning? Do you turn
+                <br> to vapour now, dew?
+            </p>
+        </div>
+        <div id="Haiku Four">
+            <p class="Title">
+                Coming soon... Make your own Haiku
+            </p>
+            <p>
+                Type into the boxes below, with the following rules:
+                <ul>
+                    <li>
+                        Line one must be 5 syllables,
+                    </li>
+                    <Li>
+                        Line two must be 7 syllables,
+                    </Li>
+                    <li>
+                        Line Three must be 5 syllables.
+                    </li>
+                </ul>
+
+            </p>
+            <form action="/haiku-entering" method="POST" class="Verse">
+                <div>
+                    <label for="line one">Line one</label>
+                    <input type="text" id="line one" name="line_one" title="Remember, 5 syllables...">
+                </div>
+                <div>
+                    <label for="line two">Line two</label>
+                    <input type="text" id="line two" name="line_two" title="Remember, 7 syllables...">
+                </div>
+                <div>
+                    <label for="line three">Line three</label>
+                    <input type="text" id="line three" name="line_three" title="Remember, 5 syllables...">
+                </div>
+                <div>
+                    <button type="reset">Press here to
+                        <strong>start again</strong>
+                    </button>
+                    <button type="submit">Press here to
+                        <strong>submit</strong>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <div id="Haiku Five">
+            <p class="Title">
+                Coming soon... Random Haiku Generator
+            </p>
+            <p class="Verse">
+                <!-- insert button that, when pressed, generates a haiku in a JS alert, maybe then show options to print/save etc-->
+                <button type=button>Coming soon, press here to generate a haiku</button>
+
+
+            </p>
+        </div>
     </div>
 
-    
 
 </body>
 

@@ -1,25 +1,79 @@
 #header {
-  font: bold small-caps normal 20pt Verdana, Geneva, sans-serif;
-  /*font-style font-variant font-weight font-size/line-height font-family*/ }
+  /*applies to the id header*/
+  font: 10pt Verdana, Geneva, sans-serif;
+  font-weight: bold;
+  font-size: 10pt Verdana, Geneva, sans-serif10pt; }
 
 h1 {
   /*applies to the header h1 */
-  color: blue;
-  border: 1px solid black;
-  background-color: #bb7517; }
+  color: RGB(88 80 80);
+  background-color: #efbe7c;
+  font-variant: small-caps; }
+
+h2:hover {
+  /*applies when hovering over Contents*/
+  color: antiquewhite; }
 
 html {
-  background-color: #faebd7; }
+  /*applies to all*/
+  background-color: antiquewhite; }
 
 body {
-  font-family: Verdana, Geneva, sans-serif;
+  /*applies to the body*/
+  font: 10pt Verdana, Geneva, sans-serif;
   color: black;
   font-size: 10pt; }
 
-.Title {
-  /*applies to all classes containing word title*/
-  font-weight: bold;
-  font-size: 14pt; }
-
 .Poetry {
-  font-style: italic; }
+  /*applies to all classes containing word Poetry*/
+  background-color: #f7e0c0; }
+  .Poetry .Title {
+    /*applies to all classes containing word Title*/
+    /*property nesting*/
+    font-weight: bold;
+    font-size: 14pt; }
+  .Poetry .Verse {
+    /*applies to class Verse*/
+    font-style: italic; }
+
+img {
+  opacity: 1.0; }
+
+img:hover {
+  opacity: 0.5; }
+
+.Footer:hover {
+  /*applies when hovering over Contents*/
+  color: antiquewhite; }
+
+/*.Contents {}*/
+:visited {
+  color: #e9a74f; }
+
+:link {
+  color: RGB(88 80 80); }
+
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidebar */
+  padding: 0px 20px; }
+
+.sidenav {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  width: 160px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #e39022;
+  opacity: 0.8;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding: 20px 10px; }
+  .sidenav :visited {
+    color: #603c0c; }
