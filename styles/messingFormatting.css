@@ -10,10 +10,6 @@ span {
     background-color: lime;
   }
 
-div {
-    border: 10px dashed darkgreen;
-}
-
 h1 {
     color: blue;
     background-color: yellow;
@@ -51,6 +47,28 @@ li {
 #third {
     color: brown;
 }
+
+#hiddenDiv {
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    opacity: 1.0 /*doesn't work*/
+}
+
+#Button3 {
+    background-color: red;
+    border: black;
+    color: white;
+    padding: 100px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 72px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: fixed;
+}
+
+
 
 /*CLASSES*/
 
