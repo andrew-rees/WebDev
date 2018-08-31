@@ -1,3 +1,5 @@
+<!---->
+
 <!DOCTYPE html>
 <html>
 
@@ -6,6 +8,7 @@
     <title>Haikus</title>
     <link href="..\styles\haikusFormatting.css" rel="stylesheet" type="text/css">
     <link href="..\styles\defaultFormatting.css" rel="stylesheet" type="text/css">
+    <script src="..\scripts\haikus.js"></script>
 </head>
 
 <body class="Poetry Haikus" id="Poetry">
@@ -127,15 +130,19 @@
                     <input type="text" id="line three" name="line_three" title="Remember, 5 syllables...">
                 </div>
                 <div>
-                    <button type="reset">Press here to
+                    <button type="reset" id="reset">Press here to
                         <strong>start again</strong>
                     </button>
-                    <button type="submit">Press here to
+                    <button type="button" id="submit">Press here to
                         <strong>submit</strong>
                     </button>
                 </div>
 
             </form>
+
+        </div>
+        <div id "Display">
+            <p>Your Poem SHOULD show here but it doesn't :(:</p>
         </div>
 
         <div id="Haiku Five">
