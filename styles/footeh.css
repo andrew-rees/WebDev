@@ -1,0 +1,28 @@
+[data-area] {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width: 200px;
+  background: url("http://mdn.github.io/learning-area/css/introduction-to-css/css-selectors/en-GB.png") 5px center no-repeat;
+  text-align: end; }
+
+[data-area="North West"] {
+  border-left: 6px solid red; }
+
+[data-area="London"] {
+  border-left: 6px solid green; }
+
+[data-area="Wales"] {
+  border-left: 6px solid white; }
+
+[data-area="Yorkshire"] {
+  border-left: 6px solid yellow; }
+
+[data-area="North East"] {
+  border-left: 6px solid pink; }
+
+[data-area="Midlands"] {
+  border-left: 6px solid orange; }
+
+[data-area="South"] {
+  border-left: 6px solid blue; }

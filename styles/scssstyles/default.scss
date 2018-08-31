@@ -3,6 +3,7 @@ Geneva,
 sans-serif;
 $defaultFontSize: 10pt;
 $backgroundColor: rgb(250, 235, 215);
+$margin: 160px;
 #header {
     /*applies to the id header*/
     font: $defaultFont;
@@ -75,13 +76,13 @@ img:hover {
 }
 
 .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
+    margin-left: $margin; /* Same as the width of the sidebar */
     padding: 0px 20px;
 }
 
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
+    width: $margin; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
