@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Become a Critic...</title>
+    <link href="..\styles\default.css" rel="stylesheet" type="text/css">
+    <link href="..\styles\form.css" rel="stylesheet" type="text/css">
+    <link href="..\styles\litcrit.css" rel="stylesheet" type="text/css">
+    <script src="..\scripts\litcrit.js"></script>
+</head>
+
+<body>
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <h2>Contents</h2>
+        <ul title="How to get to the poms">
+                <li>
+                    <a href="../index.html">Index</a>
+                </li>
+                <li>
+                    <a href="haikus.html">Haikoos</a>
+                </li>
+                <li>
+                    <a href="Long Form.html">Long Form Poetry</a>
+                </li>
+                <li>
+                    <a href="../contact.html">Contacts</a>
+                </li>
+                <li>
+                    <a href="../messing.html">Messing - click here at your peril</a>
+                </li>
+                <li>
+                    <a href="footeh.html">Footbyball kicking things</a>
+                </li>
+                <li>
+                        <a href="litcrit.html" title="You're already here, so by bother??">Literary Criticism page</a>
+                </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <p id="header">
+            <h1>Literary Criticism page</h1>
+        </p>
+        <p>
+            You can upload a poem, choose how it looks, then review it, and publish your review online, in the boxes below.
+        </p>
+        <div id="getPoets">
+            <p>
+                But hey, if you need some inspiration, click the below and you'll get some suggestions for poets.
+            </p>
+            <button type="button" class="neutralButton" id="poet button">Be amazed... (coming soon)</button>        
+        </div>
+
+
+        <form action="/contact-received-page" method="POST">
+            <div>
+                <label for="author">Author of the poem</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div>
+                <label for="poem">Paste the poem here - max 10,000 characters</label>
+                <textarea type="text" id="text-area-poem" name="pasted_poem" maxlength="100" placeholder="Poem goes here..."></textarea>
+            </div>
+            <div id="classic">
+                <p>
+                    I wandered lonely as a cloud
+                    <br>That floats on high o'er vales and hills
+                    <br>When all I once I saw a crowd
+                    <br>A host of golden daffodils.
+                </p>
+                <button class="neutralButton" type="button" id="classic">
+                        Classic
+                </button>
+            </div>
+            <div id="fancy">
+                <p>
+                    I wandered lonely as a cloud
+                    <br>That floats on high o'er vales and hills
+                    <br>When all I once I saw a crowd
+                    <br>A host of golden daffodils.
+                </p>
+                <button class="neutralButton" type="button" id="fancy">
+                        Fancy
+                </button>
+            </div>
+            <div id="minimal">
+                <p>
+                    I wandered lonely as a cloud
+                    <br>That floats on high o'er vales and hills
+                    <br>When all I once I saw a crowd
+                    <br>A host of golden daffodils.
+                </p>
+                <button class="neutralButton" type="button" id="minimal">
+                        Minimal
+                </button>
+            </div>
+        </form>
+
+        <div class="Footer">
+            <p>
+                <a href="litcrit.html#header">Click here to go to the top of the page</a>
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

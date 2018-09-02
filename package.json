@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "moment": "^2.22.2",
     "node-sass": "^4.9.3",
-    "readline-sync": "^1.4.9"
+    "readline-sync": "^1.4.9",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {},
   "scripts": {

@@ -39,12 +39,20 @@ textarea:focus {
     border-color: #000;
 }
 
-textarea {
+#text-area-query {
     /* To properly align multiline text fields with their labels */
     vertical-align: top;
 
     /* To give enough room to type some text */
     height: 10em;
+}
+
+#text-area-poem {
+        /* To properly align multiline text fields with their labels */
+        vertical-align: top;
+
+        /* To give enough room to type some text */
+        height: 20em;
 }
 
 .button {

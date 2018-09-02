@@ -2,7 +2,7 @@ $defaultFont: 10pt Verdana,
 Geneva,
 sans-serif;
 $defaultFontSize: 10pt;
-$backgroundColor: rgb(250, 235, 215);
+$backgroundColor: white;
 $margin: 160px;
 #header {
     /*applies to the id header*/
@@ -87,11 +87,33 @@ img:hover {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: darken($backgroundColor, 40%);
+    background-color: darken(rgb(250, 235, 215), 30%);
     opacity: 0.8;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding: 20px 10px;
     :visited {
         color: darken($backgroundColor, 70%);
     }
+}
+
+.positiveButton {
+    background-color: RGB(204 255 153)
+}
+
+.negativeButton {
+    background-color: RGB(255 102 102) 
+}
+
+.neutralButton {
+    background-image: radial-gradient(yellow, brown);
+}
+
+.apiReturn {
+    border: 5px solid black;
+    border-radius: 1em;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    bottom: 0; /* Stay at the top */
+    right: 0;
+    padding: 10px;
+    margin: 20px;
 }

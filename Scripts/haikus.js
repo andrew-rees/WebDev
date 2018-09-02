@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ////further - give each word a property (syllables) and use this to calculate line length, not word length;
     ////further - capitalise first letter of line (var firstLineUC doesn't work)
     ////clear the html element when pressing the button, then re-displaying it with new value (if (randomHaikuVis === "visible") doesn't work)
+    ////
 
     // VARIBLES AND ARRAYS
     let firstLine = ""
