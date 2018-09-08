@@ -4,9 +4,9 @@
 //get the newest football story and display
 ////search for the Tag football eg https://content.guardianapis.com/search?q=football&api-key=caea3217-7fe3-465b-87c2-25d51493099c
 ////order by webPublicationDate
+//// need to format webPub (as moment can't be used)
 
 const request = require("request");
-const moment = require("moment");
 
 console.log("the file ran!")
 
@@ -21,10 +21,9 @@ function getLatestStory () {
     var webUrl = parsedResponse.response.results[0].webUrl
     var webTitle = parsedResponse.response.results[0].webTitle
     var webPub = parsedResponse.response.results[0].webPublicationDate
-    var webPubFormatted = moment(webPub, "YYYY-MM-DD HH:MM:SS").format("DD MMM YYYY, HH:MM:SS")
+    //need something to format the date from utc standard
     console.log(`parsedResponse: ${webPub}`);
-    console.log(moment());
-    displayLatestStory(webUrl, webTitle, webPubFormatted)
+    displayLatestStory(webUrl, webTitle, webPub)
     })
 }
 
@@ -55,15 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     getLatestStory()
     console.log("The DOM content loaded")
 }, false);
-
-// let now = moment() //this gives you the time now
-// let birthday = "17/10/1983"
-
-// let formattedDate = moment(birthday, "DD/MM/YYYY").format("DD MMM YYYY") //moment() maps birthday on DD/MM/YY, then formats it how you like in ()
-// let formattedNow = moment(now, "YYYY-MM-DD HH:MM:SS:MSMSMS").format("DD MMM YYYY, HH:MM:SS") //same here - maps moment() into format()
-
-// console.log(formattedDate)
-// console.log(formattedNow)
 
 
 

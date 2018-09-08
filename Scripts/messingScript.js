@@ -71,29 +71,3 @@ document.addEventListener("DOMContentLoaded", () => {
         showHideButton()
     })
 }, false);
-
-
-
-
-
-
-
-
-//Event Listener that fires on pressing button 1, but doesn't work (Uncaught TypeError: Cannot read property 'addEventListener' of null at messingScript.js:12)
-
-// var myButton = document.getElementById('Button1');
-// myButton.addEventListener('click', function (event) {
-//     alert('Button pressed!');
-//     console.log("The function worked")
-// });
-
-//Suggestion to run the function window.onload
-
-// window.onload=function(){
-//     var mb = document.getElementById("Button1");
-//     mb.addEventListener("click", handler);
-// }
-
-// function handler() {
-//     alert("You clicked on me, Button 1");
-// }

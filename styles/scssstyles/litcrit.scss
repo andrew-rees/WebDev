@@ -9,3 +9,19 @@
 #minimal {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+
+#getPoets {
+    font-size: 20px;
+    p {
+        color: red;
+    }
+    a {
+        color: green;
+    }
+    h3 {
+        color: purple;
+    }
+    #poemUrl:hover {
+        color: white;
+    }
+}
