@@ -3,6 +3,26 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    //canvas
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var a = 10
+    var b = 10
+    var c = 100
+    var d = 100
+
+    ctx.fillStyle = 'green';
+    ctx.fillRect(a, b, c, c);
+
+    var enterValueA = document.getElementById(`enterValueA`);
+    enterValueA.addEventListener('input', changeA)
+
+    function changeA () {
+        a = enterValueA.value
+    }
+
+    //button
+
     var myButton1 = document.getElementById('Button4');
     myButton1.addEventListener('click', function (event) {
 
@@ -26,4 +46,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    }, false)
+}, false)

@@ -148,7 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then(function (parsedResponseWiki) {
                         //console.log(`${parsedResponseWiki.query.search[0].snippet}`)
                         var snippet1 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`
-                        displayPoets(poet1, url1, snippet1)
+                        displayPoets(poet1, url1, snippet1, "1")
+                        console.log(snippet1)
                     })
 
                 fetch(searchUrl2)
@@ -158,7 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then(function (parsedResponseWiki) {
                         //console.log(`${parsedResponseWiki.query.search[0].snippet}`)
                         var snippet2 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`
-                        displayPoets(poet2, url2, snippet2)
+                        displayPoets(poet2, url2, snippet2, "2")
+                        console.log(snippet2)
                     })
 
                 fetch(searchUrl3)
@@ -168,7 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then(function (parsedResponseWiki) {
                         //console.log(`${parsedResponseWiki.query.search[0].snippet}`)
                         var snippet3 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`
-                        displayPoets(poet3, url3, snippet3)
+                        displayPoets(poet3, url3, snippet3, "3")
+                        console.log(snippet3)
                     })
 
             })
@@ -177,15 +180,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log('There has been a problem with your fetch operation: ', error.message);
             })
 
-        function displayPoets(a, b, c) {
-
+        function displayPoets(a, b, c, d) {
+            
+            var element = document.getElementById(`getPoets${d}`); //this says where you want to put the new text - in this case with 'getPoets'
             var pOne = document.createElement("h3"); //this says what type of element you want to create
             var pTwo = document.createElement("a");
             var pThree = document.createElement("p");
-            var element = document.getElementById("getPoets"); //this says where you want to put the new text - in this case with 'getPoets'
+            
             var useLineOne = document.createTextNode(a); //this says that you want to create a 
             var useLineTwo = document.createTextNode(b);
             var useLineThree = document.createTextNode(c);
+
 
             pTwo.title = "Link to Poet's wikipedia"
             pTwo.href = b

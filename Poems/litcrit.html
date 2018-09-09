@@ -12,7 +12,7 @@
 
 <body>
     <!-- Side navigation -->
-    <div class="sidenav">
+    <aside class="sidenav">
         <h2>Contents</h2>
         <ul title="How to get to the poms">
                 <li>
@@ -37,16 +37,16 @@
                         <a href="litcrit.html" title="You're already here, so by bother??">Literary Criticism page</a>
                 </li>
         </ul>
-    </div>
+    </aside>
 
-    <div class="main">
+    <article class="main">
         <p id="header">
             <h1>Literary Criticism page</h1>
         </p>
         <p>
             You can upload a poem, choose how it looks, then review it, and publish your review online, in the boxes below.
         </p>
-        <div id="getPoets">
+        <section id="getPoets">
             <div>
                 But hey, if you need some inspiration, click the below and you'll get some suggestions for poets.
             </div>
@@ -60,10 +60,10 @@
             <div id="getPoets3">
 
             </div>                 
-        </div>
+        </section>
 
 
-        <form action="/contact-received-page" method="POST">
+        <form id="litcrit"action="/contact-received-page" method="POST">
             <div>
                 <label for="author">Author of the poem</label>
                 <input type="text" id="author" name="author">
@@ -72,7 +72,7 @@
                 <label for="poem">Paste the poem here - max 10,000 characters</label>
                 <textarea type="text" id="text-area-poem" name="pasted_poem" maxlength="100" placeholder="Poem goes here..."></textarea>
             </div>
-            <div id="classic">
+            <section id="classic" title="Some text will appear here, that is taken from a poetry website. This style of font is a serif, and looks classy">
                 <!-- <p>
                     I wandered lonely as a cloud
                     <br>That floats on high o'er vales and hills
@@ -82,8 +82,8 @@
                 <button class="neutralButton" type="button" id="classic">
                         Classic
                 </button>
-            </div>
-            <div id="fancy">
+            </section>
+            <section id="fancy" title="Some text will appear here, that is taken from a poetry website. This style of font is calligraphic, and looks posh">
                 <!-- <p>
                     I wandered lonely as a cloud
                     <br>That floats on high o'er vales and hills
@@ -93,8 +93,8 @@
                 <button class="neutralButton" type="button" id="fancy">
                         Fancy
                 </button>
-            </div>
-            <div id="minimal">
+            </section>
+            <section id="minimal" title="Some text will appear here, that is taken from a poetry website. This style of font is a sans-serif, and looks restrained">
                 <!-- <p>
                     I wandered lonely as a cloud
                     <br>That floats on high o'er vales and hills
@@ -104,23 +104,16 @@
                 <button class="neutralButton" type="button" id="minimal">
                         Minimal
                 </button>
-            </div>
+            </section>
         </form>
 
-        <div class="Footer">
+        <footer>
             <p>
                 <a href="litcrit.html#header">Click here to go to the top of the page</a>
             </p>
-        </div>
+        </footer>
 
-
-
-
-
-
-
-
-    </div>
+    </article>
 </body>
 
 </html>
