@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Become a Critic...</title>
     <link href="..\styles\default.css" rel="stylesheet" type="text/css">
-    <link href="..\styles\form.css" rel="stylesheet" type="text/css">
     <link href="..\styles\litcrit.css" rel="stylesheet" type="text/css">
     <script src="..\scriptstemp\litcrit.js"></script>
 </head>
@@ -15,27 +14,30 @@
     <aside class="sidenav">
         <h2>Contents</h2>
         <ul title="How to get to the poms">
-                <li>
-                    <a href="../index.html">Index</a>
-                </li>
-                <li>
-                    <a href="haikus.html">Haikoos</a>
-                </li>
-                <li>
-                    <a href="Long Form.html">Long Form Poetry</a>
-                </li>
-                <li>
-                    <a href="../contact.html">Contacts</a>
-                </li>
-                <li>
-                    <a href="../messing.html">Messing - click here at your peril</a>
-                </li>
-                <li>
-                    <a href="footeh.html">Footbyball kicking things</a>
-                </li>
-                <li>
-                        <a href="litcrit.html" title="You're already here, so by bother??">Literary Criticism page</a>
-                </li>
+            <li>
+                <a href="../index.html" title="You're already here, so by bother??">Index</a>
+            </li>
+            <li>
+                <a href="haikus.html">Haikoos</a>
+            </li>
+            <li>
+                <a href="Long Form.html">Long Form Poetry</a>
+            </li>
+            <li>
+                <a href="../contact.html">Contacts</a>
+            </li>
+            <li>
+                <a href="../messing.html">Messing - click here at your peril</a>
+            </li>
+            <li>
+                <a href="footeh.html">Footbyball kicking things</a>
+            </li>
+            <li>
+                <a href="canvas.html">Drawings</a>
+            </li>
+            <li>
+                <a href="litcrit.html">If you think you know about literature...</a>
+            </li>
         </ul>
     </aside>
 
@@ -44,13 +46,14 @@
             <h1>Literary Criticism page</h1>
         </p>
         <p>
-            You can upload a poem, choose how it looks, then review it, and publish your review online, in the boxes below.
+            You can upload a poem, choose how it looks, then review it, and publish your review online, in the boxes
+            below.
         </p>
         <section id="getPoets">
             <div>
                 But hey, if you need some inspiration, click the below and you'll get some suggestions for poets.
             </div>
-            <button type="button" class="neutralButton" id="poet button">Be inspired...</button> 
+            <button type="button" class="neutralButton" id="poet button">Be inspired...</button>
             <div id="getPoets1">
 
             </div>
@@ -59,11 +62,11 @@
             </div>
             <div id="getPoets3">
 
-            </div>                 
+            </div>
         </section>
 
 
-        <form id="litcrit"action="/contact-received-page" method="POST">
+        <form id="litcrit" action="/contact-received-page" method="POST">
             <div>
                 <label for="author">Author of the poem</label>
                 <input type="text" id="author" name="author">
@@ -72,37 +75,40 @@
                 <label for="poem">Paste the poem here - max 10,000 characters</label>
                 <textarea type="text" id="text-area-poem" name="pasted_poem" maxlength="100" placeholder="Poem goes here..."></textarea>
             </div>
-            <section id="classic" title="Some text will appear here, that is taken from a poetry website. This style of font is a serif, and looks classy">
-                <!-- <p>
-                    I wandered lonely as a cloud
-                    <br>That floats on high o'er vales and hills
-                    <br>When all I once I saw a crowd
-                    <br>A host of golden daffodils.
-                </p> -->
+            <section id="form-middle">
+                Once you've entered you poet and poem, choose the style you'd like
+            </section>
+            <section class="classic" title="This style of font is a serif, and looks classy">
+                <p>
+                    I sing the body electric, 
+                    <br>The armies of those I love engirth me and I engirth them, 
+                    <br>They will not let me off till I go with them, respond to them, 
+                    <br>And discorrupt them, and charge them full with the charge of the soul. 
+                </p>
                 <button class="neutralButton" type="button" id="classic">
-                        Classic
+                    Classic
                 </button>
             </section>
-            <section id="fancy" title="Some text will appear here, that is taken from a poetry website. This style of font is calligraphic, and looks posh">
-                <!-- <p>
-                    I wandered lonely as a cloud
-                    <br>That floats on high o'er vales and hills
-                    <br>When all I once I saw a crowd
-                    <br>A host of golden daffodils.
-                </p> -->
+            <section class="fancy" title="This style of font is calligraphic, and looks posh">
+                <p>
+                    I sing the body electric,
+                    <br>The armies of those I love engirth me and I engirth them, 
+                    <br>They will not let me off till I go with them, respond to them, 
+                    <br>And discorrupt them, and charge them full with the charge of the soul. 
+                </p>
                 <button class="neutralButton" type="button" id="fancy">
-                        Fancy
+                    Fancy
                 </button>
             </section>
-            <section id="minimal" title="Some text will appear here, that is taken from a poetry website. This style of font is a sans-serif, and looks restrained">
-                <!-- <p>
-                    I wandered lonely as a cloud
-                    <br>That floats on high o'er vales and hills
-                    <br>When all I once I saw a crowd
-                    <br>A host of golden daffodils.
-                </p> -->
+            <section class="minimal" title="This style of font is a sans-serif, and looks restrained">
+                <p>
+                    I sing the body electric, 
+                    <br>The armies of those I love engirth me and I engirth them, 
+                    <br>They will not let me off till I go with them, respond to them, 
+                    <br>And discorrupt them, and charge them full with the charge of the soul. 
+                </p>
                 <button class="neutralButton" type="button" id="minimal">
-                        Minimal
+                    Minimal
                 </button>
             </section>
         </form>

@@ -4,6 +4,7 @@ sans-serif;
 $defaultFontSize: 10pt;
 $backgroundColor: white;
 $margin: 160px;
+
 #header {
     /*applies to the id header*/
     font: $defaultFont;
@@ -38,7 +39,9 @@ body {
 .Poetry {
     /*applies to all classes containing word Poetry*/
     background-color: darken($backgroundColor, 5%);
+
     .Title {
+
         /*applies to all classes containing word Title*/
         font: {
             /*property nesting*/
@@ -46,7 +49,9 @@ body {
             size: $defaultFontSize + 4pt;
         }
     }
+
     ;
+
     .Verse {
         /*applies to class Verse*/
         font-style: italic;
@@ -63,7 +68,8 @@ img:hover {
 
 Footer:hover {
     /*applies when hovering over Contents*/
-    color: antiquewhite; }
+    color: antiquewhite;
+}
 
 /*.Contents {}*/
 
@@ -76,24 +82,37 @@ Footer:hover {
 }
 
 .main {
-    margin-left: $margin; /* Same as the width of the sidebar */
+    margin-left: $margin;
+    /* Same as the width of the sidebar */
     padding: 0px 20px;
 }
 
 .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: $margin; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    width: $margin;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
     left: 0;
     background-color: darken(rgb(250, 235, 215), 30%);
     opacity: 0.8;
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
     padding: 20px 10px;
+
     :visited {
         color: darken($backgroundColor, 70%);
     }
+}
+
+button {
+    height: 100px;
+    width: 100px
 }
 
 .positiveButton {
@@ -101,7 +120,7 @@ Footer:hover {
 }
 
 .negativeButton {
-    background-color: RGB(255 102 102) 
+    background-color: RGB(255 102 102)
 }
 
 .neutralButton {
@@ -111,9 +130,103 @@ Footer:hover {
 .apiReturn {
     border: 5px solid black;
     border-radius: 1em;
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    bottom: 0; /* Stay at the top */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    bottom: 0;
+    /* Stay at the top */
     right: 0;
     padding: 10px;
     margin: 20px;
+}
+
+
+//Forms
+
+form {
+    margin: 0 auto;
+    width: 900px;
+    /* To see the outline of the form */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    // #litcrit { 
+    //     margin: 0 auto;
+    //     width: 750px;
+    //     /* To see the outline of the form */
+    //     padding: 1em;
+    //     border: 1px solid #CCC;
+    //     border-radius: 1em; 
+    // }
+    // #contact {
+
+    //     margin: 0 auto;
+    //     width: 500px;
+    //     /* To see the outline of the form */
+    //     padding: 1em;
+    //     border: 1px solid #CCC;
+    //     border-radius: 1em; 
+    // }
+    form div+div {
+        margin-top: 1em;
+    }
+
+    label {
+        /* To make sure that all labels have the same size and are properly aligned */
+        display: inline-block;
+        width: 120px;
+        text-align: right;
+    }
+
+    input,
+    textarea {
+        /* To make sure that all text fields have the same font settings
+    By default, textareas have a monospace font */
+        font: 1em sans-serif;
+
+        /* To give the same size to all text fields */
+        width: 500px;
+        box-sizing: border-box;
+
+        /* To harmonize the look & feel of text field border */
+        border: 1px solid #999;
+    }
+
+    input:focus,
+    textarea:focus {
+        /* To give a little highlight on active elements */
+        border-color: #000;
+    }
+
+    #form-middle {
+        text-align: center;
+        padding: 20px
+    }
+
+    #text-area-query {
+        /* To properly align multiline text fields with their labels */
+        vertical-align: top;
+
+        /* To give enough room to type some text */
+        height: 10em;
+    }
+
+    #text-area-poem {
+        /* To properly align multiline text fields with their labels */
+        vertical-align: top;
+
+        /* To give enough room to type some text */
+        height: 20em;
+    }
+
+    .button {
+        /* To position the buttons to the same position of the text fields */
+        padding-left: 90px;
+        /* same size as the label elements */
+    }
+
+    button {
+        /* This extra margin represent roughly the same space as the space
+    between the labels and their text fields */
+        margin-left: .5em;
+    }
 }
