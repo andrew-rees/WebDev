@@ -3,7 +3,7 @@ Geneva,
 sans-serif;
 $defaultFontSize: 10pt;
 $backgroundColor: white;
-$margin: 160px;
+$margin: 15%;
 
 #header {
     /*applies to the id header*/
@@ -93,7 +93,8 @@ Footer:hover {
     width: $margin;
     /* Set the width of the sidebar */
     position: fixed;
-    /* Fixed Sidebar (stay in place on scroll) */
+    /* Fixed Sidebar (s
+    y in place on scroll) */
     z-index: 1;
     /* Stay on top */
     top: 0;
@@ -111,8 +112,8 @@ Footer:hover {
 }
 
 button {
-    height: 100px;
-    width: 100px
+    height: 10%;
+    width: 10%
 }
 
 .positiveButton {
@@ -144,7 +145,7 @@ button {
 
 form {
     margin: 0 auto;
-    width: 900px;
+    width: 80%;
     /* To see the outline of the form */
     padding: 1em;
     border: 1px solid #CCC;
@@ -184,7 +185,7 @@ form {
         font: 1em sans-serif;
 
         /* To give the same size to all text fields */
-        width: 500px;
+        width: 70%;
         box-sizing: border-box;
 
         /* To harmonize the look & feel of text field border */

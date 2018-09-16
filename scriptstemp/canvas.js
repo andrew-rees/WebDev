@@ -4,15 +4,23 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     //canvas
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
+    var canvasOne = document.getElementById('canvas1');
+    var canvasTwo = document.getElementById('canvas2');
+    var canvasThree = document.getElementById('canvas3');
+    var ctxOne = canvasOne.getContext('2d');
+    var ctxTwo = canvasTwo.getContext('2d');
+    var ctxThree = canvasThree.getContext('2d');
     var a = 10
     var b = 10
     var c = 100
     var d = 100
 
-    ctx.fillStyle = 'green';
-    ctx.fillRect(a, b, c, c);
+    ctxOne.fillStyle = 'green';
+    ctxTwo.fillStyle = 'red'
+    ctxThree.fillStyle = 'black'
+    ctxOne.fillRect(a, b, c, d);
+    ctxTwo.fillRect(a/2, b/2, c/2, d/2);
+    ctxThree.fillRect(a*2, b*2, c*2, d*2)
 
     var enterValueA = document.getElementById(`enterValueA`);
     enterValueA.addEventListener('input', changeA)

@@ -2,7 +2,7 @@
 
 //STILL TO DO
 ////further - give each word a property (syllables) and use this to calculate line length, not word length - Turn it into a class of object with 2 properties - syllables and name
-////
+//// 137-144 clearDisplay - doesn't work because it can;t find the child nodes to delete, and they don't log, but they seem to be 'there'.
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -126,8 +126,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     var randomHaiku = document.getElementById('Random Haiku');
     randomHaiku.addEventListener('click', function (event) {
-
-        //clearDisplay5();
+        //console.log(document.getElementById("Display-5"))
+        var displayFive = document.getElementById("Display-5");
+        console.log(displayFive)
+            let one = displayFive.childNodes[0]
+            console.log(one);
+            let two = displayFive.childNodes[2]
+            console.log(two);
+            let three = displayFive.childNodes[3]
+            console.log(three);
+            let count = displayFive.childNodeCount
+            console.log(count)
+            var doesIt = displayFive.hasChildNodes()
+            console.log(doesIt)
+        
+        
+        //clearing the existing dom html nodes to allow new ones to be created and prevent duplication on screen (Doesn't Work)
+        // function clearDisplay5() {
+        //     var display5 = document.getElementById("Display-5");
+        //     display5.removeChild(display5.childNodes[0]);
+        //     display5.removeChild(display5.childNodes[1]);
+        //     display5.removeChild(display5.childNodes[2]);
+        // }
+        // clearDisplay5();
         randomHaikuVis = "hidden"
         showHideRandomHaiku()
 
@@ -180,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 nextWord(whichLine);
                 var trimmedThirdLine = unformattedThirdLine.trim();
                 thirdLine = trimmedThirdLine.charAt(0).toUpperCase() + trimmedThirdLine.substr(1);
-                thirdLine += ","
+                thirdLine += "."
                 console.log(thirdLine)
                 displayLine(whichLine)
                 unformattedThirdLine = "";
@@ -221,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             console.log("whichLine variable has no value")
         }
-        
+
 
 
     };
@@ -362,13 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-//clearing the existing dom html nodes to allow new ones to be created and prevent duplication on screen (Doesn't Work)
-    function clearDisplay5() {
-        var display5 = document.getElementById("Display-5");
-        display5.removeChild(display5.childNodes[0]);
-        display5.removeChild(display5.childNodes[0]);
-        display5.removeChild(display5.childNodes[0]);
-    }
+
 
 
 

@@ -14,142 +14,146 @@
 
     <aside class="sidenav">
         <h2>Contents</h2>
-        <ul title="How to get to the poms">
-            <li>
-                <a href="index.html" title="You're already here, so by bother??">Index</a>
-            </li>
-            <li>
-                <a href="poemstemp/haikus.html">Haikoos</a>
-            </li>
-            <li>
-                <a href="poemstemp/Long Form.html">Long Form Poetry</a>
-            </li>
-            <li>
-                <a href="contact.html">Contacts</a>
-            </li>
-            <li>
-                <a href="messing.html">Messing - click here at your peril</a>
-            </li>
-            <li>
-                <a href="poemstemp/footeh.html">Footbyball kicking things</a>
-            </li>
-            <li>
-                <a href="poemstemp/canvas.html">Drawings</a>
-            </li>
-            <li>
-                <a href="poemstemp/litcrit.html">If you think you know about literature...</a>
-            </li>
-        </ul>
+        <p>
+            <a href="index.html" title="You're already here, so by bother??">Index</a>
+        </p>
+        <p>
+            <a href="poemstemp/haikus.html">Haikoos</a>
+        </p>
+        <p>
+            <a href="poemstemp/Long Form.html">Long Form Poetry</a>
+        </p>
+        <p>
+            <a href="contact.html">Contacts</a>
+        </p>
+        <p>
+            <a href="messing.html">Messing - click here at your peril</a>
+        </p>
+        <p>
+            <a href="poemstemp/footeh.html">Footbyball kicking things</a>
+        </p>
+        <p>
+            <a href="poemstemp/canvas.html">Drawings</a>
+        </p>
+        <p>
+            <a href="poemstemp/litcrit.html">If you think you know about literature...</a>
+        </p>
     </aside>
 
-
-    <div id="youPushedMeTooFar"></div>
-    <h1>Messing</h1>
-    <h2>This is the second header</h2>
-    <p>
-        Let's use:
-        <section>Cascading Style Sheets</section>
-        <section>Style</section>
-        <section>Sheets</section>
-    </p>
-    <ul id="first-list">
-        <li>
-            Item 1
-        </li>
-        <li>
-            Item 2
-        </li>
-    </ul>
-
-    <p>
-        <ol>
+    <article class="main">
+        <div id="youPushedMeTooFar"></div>
+        <h1>Messing</h1>
+        <h2>This is the second header</h2>
+        <p>
+            Let's use:
+            <section>Cascading Style Sheets</section>
+            <section>Style</section>
+            <section>Sheets</section>
+        </p>
+        <ul id="first-list">
             <li>
-                Item 3
+                Item 1
             </li>
-        </ol>
-    </p>
+            <li>
+                Item 2
+            </li>
+        </ul>
 
-    <div id="div1">
         <p>
-            <button type="button" id="Button1">Practice Button ID Button1</button>
+            <ol>
+                <li>
+                    Item 3
+                </li>
+            </ol>
+        </p>
 
-        </p>
-        <p>
-            <button type="button" id="Button3">That's it, try me you massive punk</button>
-        </p>
-        <p>
-            <button type="button" id="Button2">Practice Button ID Button2</button>
-            <script>
-                var myButton = document.getElementById('Button2');
+        <div id="div1">
+            <p>
+                <button type="button" id="Button1">Practice Button ID Button1</button>
+
+            </p>
+            <p>
+                <button type="button" id="Button3">That's it, try me you massive punk</button>
+            </p>
+            <p>
+                <button type="button" id="Button2">Practice Button ID Button2</button>
+                <script>
+                    var myButton = document.getElementById('Button2');
                 myButton.addEventListener('click', function (event) {
                     alert('Button 2 pressed!');
                     console.log("The function 2 worked")
                 });
             </script>
+            </p>
+            <p>
+                <button type="button" id="Button4">Press for Fetch</button>
+            </p>
+
+        </div>
+
+        <div id="hiddenDiv">
+            <img title="You deserve this" src="images\hairyback.jpg" width="800" height="800">
+        </div>
+
+        <p class="first done">
+            This is some First Class text
         </p>
-        <p>
-            <button type="button" id="Button4">Press for Fetch</button>
+
+        <p class="second done">
+            This is some second class text
         </p>
 
-    </div>
+        <p class="thirdone">
+            This is the third one
+        </p>
 
-    <div id="hiddenDiv">
-        <img title="You deserve this" src="images\hairyback.jpg" width="800" height="800">
-    </div>
+        <div>
+            <p id="first" title="winning is the best">
+                <strong>Winner</strong>: Velma Victory</p>
+            <p id="second" title="unlucky">
+                <strong>2nd</strong>: Colin Contender</p>
+            <p id="third" title="what a wanker">
+                <strong>3rd</strong>: Phoebe Player</p>
+        </div>
 
-    <p class="first done">
-        This is some First Class text
-    </p>
+        <ol>
+            <li>
+                [attr] : This selector will select all elements with the attribute attr, whatever its value.
+            </li>
+            <li>
+                [attr=val] : This selector will select all elements with the attribute attr, but only if its value is
+                val.
 
-    <p class="second done">
-        This is some second class text
-    </p>
+            </li>
+            <li>
+                [attr~=val]: This selector will select all elements with the attribute attr, but only if val is one of
+                a
+                space-separated
+                list of words contained in attr's value.
+            </li>
+        </ol>
 
-    <p class="thirdone">
-        This is the third one
-    </p>
+        Ingredients for my recipe:
+        <i lang="fr-FR">Poulet basquaise</i>
+        <ul>
+            <li data-quantity="1kg" data-vegetable>Tomatoes</li>
+            <li data-quantity="3" data-vegetable>Onions</li>
+            <li data-quantity="3" data-vegetable>Garlic</li>
+            <li data-quantity="700g" data-vegetable="not spicy like chili">Red pepper</li>
+            <li data-quantity="2kg" data-meat="poultry">Chicken</li>
+            <li data-quantity="optional 150g" data-meat>Bacon bits</li>
+            <li data-quantity="optional 10ml" data-vegetable="liquid">Olive oil</li>
+            <li data-quantity="25cl" data-vegetable="liquid">White wine</li>
+        </ul>
 
-    <div>
-        <p id="first" title="winning is the best">
-            <strong>Winner</strong>: Velma Victory</p>
-        <p id="second" title="unlucky">
-            <strong>2nd</strong>: Colin Contender</p>
-        <p id="third" title="what a wanker">
-            <strong>3rd</strong>: Phoebe Player</p>
-    </div>
+        <a href="contact.html" id="mango" target="_blank">
+            <img title="Click here for Keith" src="images\AndyPeters.jpg" alt="This is a sign in a shop that is in greek, for for some reason also says Andy Peters on it"
+                width="300" height="250">
+        </a>
+    </article>
 
-    <ol>
-        <li>
-            [attr] : This selector will select all elements with the attribute attr, whatever its value.
-        </li>
-        <li>
-            [attr=val] : This selector will select all elements with the attribute attr, but only if its value is val.
 
-        </li>
-        <li>
-            [attr~=val]: This selector will select all elements with the attribute attr, but only if val is one of a
-            space-separated
-            list of words contained in attr's value.
-        </li>
-    </ol>
 
-    Ingredients for my recipe:
-    <i lang="fr-FR">Poulet basquaise</i>
-    <ul>
-        <li data-quantity="1kg" data-vegetable>Tomatoes</li>
-        <li data-quantity="3" data-vegetable>Onions</li>
-        <li data-quantity="3" data-vegetable>Garlic</li>
-        <li data-quantity="700g" data-vegetable="not spicy like chili">Red pepper</li>
-        <li data-quantity="2kg" data-meat="poultry">Chicken</li>
-        <li data-quantity="optional 150g" data-meat>Bacon bits</li>
-        <li data-quantity="optional 10ml" data-vegetable="liquid">Olive oil</li>
-        <li data-quantity="25cl" data-vegetable="liquid">White wine</li>
-    </ul>
-
-    <a href="contact.html" id="mango" target="_blank">
-        <img title="Click here for Keith" src="images\AndyPeters.jpg" alt="This is a sign in a shop that is in greek, for for some reason also says Andy Peters on it"
-            width="300" height="250">
-    </a>
 
 
 
