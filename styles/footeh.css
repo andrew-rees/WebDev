@@ -26,3 +26,8 @@
 
 [data-area="South"] {
   border-left: 6px solid blue; }
+
+#bold {
+  color: black;
+  font-weight: bold;
+  }
