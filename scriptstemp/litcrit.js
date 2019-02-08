@@ -13,7 +13,7 @@ class Poet {
     };
 };
 
-const authors = [
+var authors = [
     "Adam Lindsay Gordon",
     "Alan Seeger",
     "Alexander Pope",
@@ -145,21 +145,9 @@ const authors = [
     "William Wordsworth"
 ]
 
-function threeRandomNumbers(min, max) {
-    randomNumberOne = (Math.floor(Math.random() * (max - min)) + min);
-    randomNumberTwo = (Math.floor(Math.random() * (max - min)) + min);
-    randomNumberThree = (Math.floor(Math.random() * (max - min)) + min);
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min
 };
-do {
-    threeRandomNumbers(0, authors.length)
-} while ((randomNumberOne === randomNumberTwo) ||
-    (randomNumberOne === randomNumberThree) ||
-    (randomNumberThree === randomNumberTwo));
-
-var firstPoet = authors[randomNumberOne];
-var secondPoet = authors[randomNumberTwo];
-var thirdPoet = authors[randomNumberThree];
-
 
 var poetsInformation = [];
 
@@ -182,9 +170,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     $("#poetButton").click(function () {
 
-        poetsInformation.push(new Poet(1, firstPoet));
-        poetsInformation.push(new Poet(2, secondPoet));
-        poetsInformation.push(new Poet(3, thirdPoet));
+        for (i = 0; i < 3; i++) {
+            var poet = authors[randomNumber(0, authors.length)];
+            console.log("Before splice: " + authors.length);
+            authors.splice(authors[randomNumber], 1);
+            console.log("After splice: " + authors.length);
+            poetsInformation.push(new Poet(i+1, poet));
+        };
 
         poetsInformation.forEach(value => {
             var searchName = value.name.replace(" ", "%20").replace(" ", "%20")
@@ -193,17 +185,18 @@ document.addEventListener("DOMContentLoaded", () => {
             value.webPage = `https://en.wikipedia.org/wiki/${webPageName}`;
             fetch(searchUrl)
                 .then(function (response) {
+                    //console.log(response)
                     return response.json();
                 })
                 .then(function (parsedResponseWiki) {
+                    console.log(parsedResponseWiki)
                     value.snippet = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`;
                     displayHeader(value.name, value.index);
                     displayLink(value.webPage, value.index);
                     displaySnippet(value.snippet, value.index);
-                });
+                })
+                .catch();
         });
-
-
     });
 
     function checkSubmission() {
@@ -215,8 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (authorBox.length == 0 || poemBox.length == 0) {
             alert("You need to have a title and a poem in the boxes to submit")
         } else {
-            //proceed to display the poem
             console.log("we can submit")
+
         }
 
     };
