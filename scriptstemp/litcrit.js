@@ -1,6 +1,8 @@
 //STILL TO DO:
 //// format it
 //// make the 3 poets disappear when the button is pressed again - same problem as
+//// think I can get rid of the triplicate creation of the poets using a for loop, so using the 'i' eg poet[i]
+/// can i use a poet class (see practice.js)?
 
 const authors = [
     "Adam Lindsay Gordon",
@@ -169,7 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
             var poet1 = `${firstPoetSplit[0]} ${firstPoetSplit[1]} ${firstPoetSplit[2]} ${firstPoetSplit[3]}`
             var url1 = `https://en.wikipedia.org/wiki/${firstPoetSplit[0]}_${firstPoetSplit[1]}_${firstPoetSplit[2]}_${firstPoetSplit[3]}`
             var searchUrl1 = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${firstPoetSplit[0]}%20${firstPoetSplit[1]}%20${firstPoetSplit[2]}%20${firstPoetSplit[3]}&utf8=&format=json`
-
         } else {
             var poet1 = "This poet has not got a name, or it's too long"
             var url1 = "There is no link"
@@ -205,38 +206,34 @@ document.addEventListener("DOMContentLoaded", () => {
         let thirdPoetSplit = thirdPoet.split(" ");
         console.log(thirdPoet)
         if (thirdPoetSplit.length === 1) {
-            var poet3 = thirdPoetSplit[0]
-            var url3 = `https://en.wikipedia.org/wiki/${poet3}`
-            var searchUrl3 = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${poet3}&utf8=&format=json`
+            var poet3 = thirdPoetSplit[0];
+            var url3 = `https://en.wikipedia.org/wiki/${poet3}`;
+            var searchUrl3 = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${poet3}&utf8=&format=json`;
         } else if (thirdPoetSplit.length === 2) {
-            var poet3 = `${thirdPoetSplit[0]} ${thirdPoetSplit[1]}`
-            var url3 = `https://en.wikipedia.org/wiki/${thirdPoetSplit[0]}_${thirdPoetSplit[1]}`
+            var poet3 = `${thirdPoetSplit[0]} ${thirdPoetSplit[1]}`;
+            var url3 = `https://en.wikipedia.org/wiki/${thirdPoetSplit[0]}_${thirdPoetSplit[1]}`;
             var searchUrl3 = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${thirdPoetSplit[0]}%20${thirdPoetSplit[1]}&utf8=&format=json`
         } else if (thirdPoetSplit.length === 3) {
-            var poet3 = `${thirdPoetSplit[0]} ${thirdPoetSplit[1]} ${thirdPoetSplit[2]}`
-            var url3 = `https://en.wikipedia.org/wiki/${thirdPoetSplit[0]}_${thirdPoetSplit[1]}_${thirdPoetSplit[2]}`
+            var poet3 = `${thirdPoetSplit[0]} ${thirdPoetSplit[1]} ${thirdPoetSplit[2]}`;
+            var url3 = `https://en.wikipedia.org/wiki/${thirdPoetSplit[0]}_${thirdPoetSplit[1]}_${thirdPoetSplit[2]}`;
             var searchUrl3 = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${thirdPoetSplit[0]}%20${thirdPoetSplit[1]}%20${thirdPoetSplit[2]}&utf8=&format=json`
         } else if (thirdPoetSplit.length === 4) {
-            var poet3 = `${thirdPoetSplit[0]} ${thirdPoetSplit[1]} ${thirdPoetSplit[2]} ${thirdPoetSplit[3]}`
-            var url3 = `https://en.wikipedia.org/wiki/${thirdPoetSplit[0]}_${thirdPoetSplit[1]}_${thirdPoetSplit[2]}_${thirdPoetSplit[3]}`
+            var poet3 = `${thirdPoetSplit[0]} ${thirdPoetSplit[1]} ${thirdPoetSplit[2]} ${thirdPoetSplit[3]}`;
+            var url3 = `https://en.wikipedia.org/wiki/${thirdPoetSplit[0]}_${thirdPoetSplit[1]}_${thirdPoetSplit[2]}_${thirdPoetSplit[3]}`;
             var searchUrl3 = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${thirdPoetSplit[0]}%20${thirdPoetSplit[1]}%20${thirdPoetSplit[2]}%20${thirdPoetSplit[3]}&utf8=&format=json`
         } else {
-            var poet3 = "This poet has not got a name, or it's too long"
-            var url2 = "There is no link"
-            var searchUrl3 = "there is no snippet"
+            var poet3 = "This poet has not got a name, or it's too long";
+            var url2 = "There is no link";
+            var searchUrl3 = "there is no snippet";
         }
 
         fetch(searchUrl1)
             .then(function (response) {
                 return response.json();
-
-
-
-
             })
             .then(function (parsedResponseWiki) {
-                var snippet1 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`
-                displayPoets(poet1, url1, snippet1, "1")
+                var snippet1 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`;
+                displayPoets(poet1, url1, snippet1, "1");
                 //console.log(snippet1)
             })
 
@@ -245,8 +242,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 return response.json();
             })
             .then(function (parsedResponseWiki) {
-                var snippet2 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`
-                displayPoets(poet2, url2, snippet2, "2")
+                var snippet2 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`;
+                displayPoets(poet2, url2, snippet2, "2");
                 //console.log(snippet2)
             })
 
@@ -255,36 +252,36 @@ document.addEventListener("DOMContentLoaded", () => {
                 return response.json();
             })
             .then(function (parsedResponseWiki) {
-                var snippet3 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`
-                displayPoets(poet3, url3, snippet3, "3")
+                var snippet3 = `${parsedResponseWiki.query.search[0].snippet}... click on the link to find out more`;
+                displayPoets(poet3, url3, snippet3, "3");
                 //console.log(snippet3)
             })
 
-        function displayPoets(a, b, c, d) {
-
-            var element = document.getElementById(`getPoets${d}`); //this says where you want to put the new text - in this case with 'getPoets'
+        function displayPoets(poetName, hrefUrl, websiteSnippet, poetNumber) {
+            var element = document.getElementById(`getPoets${poetNumber}`); //this says where you want to put the new text - in this case with 'getPoets'
             var pOne = document.createElement("h3"); //this says what type of element you want to create
             var pTwo = document.createElement("a");
             var pThree = document.createElement("p");
 
-            var useLineOne = document.createTextNode(a); //this says that you want to create a 
-            var useLineTwo = document.createTextNode(b);
-            var useLineThree = document.createTextNode(c);
+            var useLineOne = document.createTextNode(poetName); //this says that you want to create a 
+            var useLineTwo = document.createTextNode(hrefUrl);
+            var useLineThree = document.createTextNode(websiteSnippet);
 
-
-            pTwo.title = "Link to Poet's wikipedia"
-            pTwo.href = b
-            pTwo.target = "_blank"
-            pTwo.id = "poemUrl"
+            pTwo.title = "Link to Poet's wikipedia";
+            pTwo.href = hrefUrl;
+            pTwo.target = "_blank";
+            pTwo.id = "poemUrl";
             pOne.appendChild(useLineOne);
             pTwo.appendChild(useLineTwo);
             pThree.appendChild(useLineThree);
             element.appendChild(pOne);
             element.appendChild(pTwo);
             element.appendChild(pThree);
-        }
+        };
+    });
 
-    })
+    
+
 
     function checkSubmission() {
         var authorBox = document.getElementById("author").value
@@ -299,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("we can submit")
         }
 
-    }
+    };
 
     var submitButton = document.getElementById ('fancy');
     submitButton.addEventListener('click', function (event) {
@@ -307,3 +304,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 }, false);
+
