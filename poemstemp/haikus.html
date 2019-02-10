@@ -9,6 +9,7 @@
     <link href="..\styles\haikus.css" rel="stylesheet" type="text/css">
     <link href="..\styles\default.css" rel="stylesheet" type="text/css">
     <script src="..\scriptstemp\haikus.js"></script>
+    <script src="..\scriptstemp\jQuery.js"></script>
 </head>
 
 <body class="Poetry Haikus" id="Poetry">
@@ -121,7 +122,7 @@
                 </ul>
 
             </p>
-            <form action="/haiku-entering" method="POST" class="Verse">
+            <form action="/haiku-entering" method="POST" class="Verse" id="haikuEntering">
                 <div>
                     <label for="line one">Line one</label>
                     <input type="text" id="line one" name="line_one" title="Remember, 5 syllables...">
@@ -146,12 +147,10 @@
                 </div>
 
             </form>
-            <p id="Display-4" title="This space is where the haiku you just wrote above will appear if everything works">
-
-            </p>
+            <button type=button id="keepHaiku4">Coming soon, click here to email yourself this haiku</button>
         </section>
 
-        <button type=button id="Keep Haiku 4">Coming soon, click here to email yourself this haiku</button>
+
 
         <section id="Haiku Five">
             <p class="Title">
@@ -159,12 +158,10 @@
             </p>
             <p class="Verse">
                 <!-- insert button that, when pressed, generates a haiku in a JS alert, maybe then show options to print/save etc-->
-                <button type=button id="Random Haiku">Press here to generate a haiku</button>
+                <button type=button id="randomHaiku">Press here to generate a haiku</button>
             </p>
-            <p id="Display-5">
-
-            </p>
-            <button type=button id="Keep Haiku 5">Coming soon, click here to email yourself this haiku</button>
+            <div id="haiku5Placeholder"></div>
+            <button type=button id="keepHaiku5">Coming soon, click here to email yourself this haiku</button>
 
 
         </section>

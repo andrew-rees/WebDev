@@ -4,98 +4,63 @@
 ////further - give each word a property (syllables) and use this to calculate line length, not word length - Turn it into a class of object with 2 properties - syllables and name
 //// 137-144 clearDisplay - doesn't work because it can;t find the child nodes to delete, and they don't log, but they seem to be 'there'.
 
+/*Refactor with JQuery
+-replace all js dom manipulation with jQuery
+- fix display5
+- fetch the list of words - https://raw.githubusercontent.com/first20hours/google-10000-english/master/20k.txt
+- use these words for haikus
+
+*/
+var buttonCount = 0;
+
+function controlResetButtonVisibility() {
+    if (buttonCount < 2) {
+        buttonCount++
+        alert(`Be warned - you only have ${3 - buttonCount} more resets available!`);
+    } else if (buttonCount === 2) {
+        alert(`This is your last reset - from now on, trust yourself and let the words soar like a bold eagle...`);
+        $('#reset').remove();
+    };
+};
+
+function checkSubmission() {
+    var lineOne = document.getElementById("line one").value;
+    var lineTwo = document.getElementById("line two").value;
+    var lineThree = document.getElementById("line three").value;
+    if (lineOne.length > 0 && lineTwo.length > 0 && lineThree.length > 0) {
+        $("#Display-4").remove();
+        $('#keepHaiku4').remove();
+        var userHaikuContainer = $("<div>").attr("id", "Display-4");
+        var lineOneElement = $("<p>").text(lineOne);
+        var lineTwoElement = $("<p>").text(lineTwo);
+        var lineThreeElement = $("<p>").text(lineThree);
+        $(`#haikuEntering`).append(userHaikuContainer);
+        $('#Display-4').append(lineOneElement, lineTwoElement, lineThreeElement);
+        $('#keepHaiku4').show();
+    } else {
+        alert("You need to add something into each box - allow that power to glisten, child...")
+    };
+};
+
 document.addEventListener("DOMContentLoaded", () => {
 
     //Reset Button on submit own haiku can only be pressed twice 
 
-    var resetVis = "visible";
-    var buttonCount = 0;
-
-    function showHideReset() {
-        document.getElementById("reset").style.visibility = resetVis;
-        //console.log("Reset Button is " + resetVis);
-    }
-    showHideReset()
-
-    var resetButton = document.getElementById('reset');
-    resetButton.addEventListener('click', function (event) {
-        if (buttonCount < 2) {
-            buttonCount++
-            console.log(buttonCount);
-            alert(`Be warned - you only have ${3 - buttonCount} more resets available!`);
-        } else if (buttonCount === 2) {
-            alert(`This is your last reset - from now on, trust yourself and let the words soar like a bold eagle...`);
-            resetVis = "hidden";
-            showHideReset();
-            console.log(buttonCount);
-            console.log("Reset Button is " + resetVis);
-        }
+    $('#reset').click(function () {
+        controlResetButtonVisibility()
     });
-
 
     //--------------------------------------------------------------------------------//
 
-
-    var userHaikuVis = "hidden"; //hides the element before button pressed
-
-    function showHideUserHaiku() {
-        document.getElementById("Display-4").style.visibility = userHaikuVis; //hides the element so the CSS doesn't appear on page
-        document.getElementById("Keep Haiku 4").style.visibility = userHaikuVis;
-    }
-    showHideUserHaiku()
-
-    function checkSubmission() {
-        var lineOne = document.getElementById("line one").value
-        console.log(lineOne)
-        var lineTwo = document.getElementById("line two").value
-        console.log(lineTwo)
-        var lineThree = document.getElementById("line three").value
-        console.log(lineThree)
-
-
-
-        if (lineOne.length > 0 && lineTwo.length > 0 && lineThree.length > 0) {
-            userHaikuVis = "visible"; //shows the element
-            showHideUserHaiku();
-
-            var pOne = document.createElement("p");
-            var pTwo = document.createElement("p");
-            var pThree = document.createElement("p");
-            var element = document.getElementById("Display-4");
-            var useLineOne = document.createTextNode(lineOne);
-            var useLineTwo = document.createTextNode(lineTwo);
-            var useLineThree = document.createTextNode(lineThree);
-
-            pOne.appendChild(useLineOne);
-            pTwo.appendChild(useLineTwo);
-            pThree.appendChild(useLineThree);
-            element.appendChild(pOne);
-            element.appendChild(pTwo);
-            element.appendChild(pThree);
-
-            //Put text on page:
-            ////turn each box into a string if lineOne Two Three aren't already
-            ////display each string in html on the page
-            ////format those strings in html and scss
-        } else {
-            alert("You need to add something into each box - allow that power to glisten, child...")
-        }
-
-    }
-
-    var submitButton = document.getElementById('submit');
-    submitButton.addEventListener('click', function (event) {
+    $('#keepHaiku4').hide()
+    $('#submit').click(function () {
         checkSubmission();
     });
-
 
     //-------------------------------------------------------------//
 
 
     //Random Haiku Generation////
-
-
-
 
     // VARIBLES AND ARRAYS
     let unformattedFirstLine = ""
@@ -105,60 +70,21 @@ document.addEventListener("DOMContentLoaded", () => {
     let secondLine = ""
     let thirdLine = ""
 
-
     const nouns = ["world", "money", "monkey", "honey", "south", "breath", "wind", "love", "I", "you", "they", "tower", "cloud", "sun", "beyond", "trees", "melody", "hands"];
     const joins = ["on", "with", "in", "for", "will", "together", "apart", "far", "at"];
     const verbs = ["fly", "feel", "think", "love", "go", "run", "slide", "jostle", "shout", "sing", "sit", "breathe", "swoop"];
     const adjectives = ["wild", "constant", "jubilant", "red", "pale", "charmed", "blue", "green", "strong", "hopeful"];
     const adverbs = ["slowly", "gently", "fleetingly", "movingly", "calmly", "suddenly", "wholly", "lithely", "timely"];
-    var randomNumber;
-    var randomHaikuVis = "hidden"; //hides the element before button pressed
-    var numberOfRandomHaikus = 0 //stores number of haikus generated        
+    var randomNumber;    
     var which = "" //holds which type of word has just been used
 
-    function showHideRandomHaiku() {
-        document.getElementById("Display-5").style.visibility = randomHaikuVis; //hides the element so the CSS doesn't appear on page
-        document.getElementById("Keep Haiku 5").style.visibility = randomHaikuVis;
-    }
-    showHideRandomHaiku()
+    $('#keepHaiku5').hide()
 
-
-
-    var randomHaiku = document.getElementById('Random Haiku');
-    randomHaiku.addEventListener('click', function (event) {
-        //console.log(document.getElementById("Display-5"))
-        var displayFive = document.getElementById("Display-5");
-        console.log(displayFive)
-            let one = displayFive.childNodes[0]
-            console.log(one);
-            let two = displayFive.childNodes[2]
-            console.log(two);
-            let three = displayFive.childNodes[3]
-            console.log(three);
-            let count = displayFive.childNodeCount
-            console.log(count)
-            var doesIt = displayFive.hasChildNodes()
-            console.log(doesIt)
-        
-        
-        //clearing the existing dom html nodes to allow new ones to be created and prevent duplication on screen (Doesn't Work)
-        // function clearDisplay5() {
-        //     var display5 = document.getElementById("Display-5");
-        //     display5.removeChild(display5.childNodes[0]);
-        //     display5.removeChild(display5.childNodes[1]);
-        //     display5.removeChild(display5.childNodes[2]);
-        // }
-        // clearDisplay5();
-        randomHaikuVis = "hidden"
-        showHideRandomHaiku()
+    $('#randomHaiku').click(function () {
+        $("#randomHaikuAdded").remove();
 
         function generateHaiku() { //generates the haiku
-            randomHaikuVis = "visible"; //shows the element
-            showHideRandomHaiku();
-            numberOfRandomHaikus++
-            console.log(numberOfRandomHaikus);
-
-
+            
             ((whichLine) => { //generates Line One
                 console.log(`Line ${whichLine}:`)
                 haikuStart(whichLine); //starts the poem
@@ -223,28 +149,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayLine(whichLine) { //displays the text in the right place
 
-        let para = document.createElement("p");
-        para.setAttribute('id', 'Random-Haiku-Line');
-        let element = document.getElementById("Display-5");
-
         if (whichLine == 1) {
-            let node = document.createTextNode(firstLine);
-            para.appendChild(node);
-            element.appendChild(para);
+            var randomLineOne = $("<p>").text(firstLine).attr("id", "randomHaikuAdded");
+            $('#haiku5Placeholder').append(randomLineOne);
         } else if (whichLine == 2) {
-            let node = document.createTextNode(secondLine);
-            para.appendChild(node);
-            element.appendChild(para);
+            var randomLineTwo = $("<p>").text(secondLine).attr("id", "randomHaikuAdded");
+            $('#haiku5Placeholder').append(randomLineTwo);
         } else if (whichLine == 3) {
-            let node = document.createTextNode(thirdLine);
-            para.appendChild(node);
-            element.appendChild(para);
+            var randomLineThree = $("<p>").text(thirdLine).attr("id", "randomHaikuAdded");
+            $('#haiku5Placeholder').append(randomLineThree);
         } else {
             console.log("whichLine variable has no value")
-        }
-
-
-
+        };
     };
 
     function haikuStart(whichLine) { //starts the haiku with a random word
@@ -380,11 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
             unformattedThirdLine += thisAdverb;
         } else {
             console.log("whichLine has no value")
-        }
+        };
     };
-
-
-
-
-
 }, false);

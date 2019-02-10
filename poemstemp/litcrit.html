@@ -64,20 +64,19 @@
             </div>
         </section>
 
-
         <form id="litcrit" action="/contact-received-page" method="POST">
             <div>
                 <label for="author">Author of the poem</label>
                 <input type="text" id="author" name="author">
             </div>
             <div>
-                <label for="poem">Paste the poem here - max 10,000 characters</label>
-                <textarea type="text" id="text-area-poem" name="pasted_poem" maxlength="100" placeholder="Poem goes here..."></textarea>
+                <label for="poem">Paste the poem here - max 1,000 characters</label>
+                <textarea type="text" id="text-area-poem" name="pasted_poem" maxlength="1000" placeholder="Poem goes here..."></textarea>
             </div>
             <section id="form-middle">
                 Once you've entered you poet and poem, choose the style you'd like
             </section>
-            <section class="classic" title="This style of font is a serif, and looks classy">
+            <section class="classic" title="This style of font is a serif, and looks classy" id="whitmanSnippet">
                 <p>
                     I sing the body electric, 
                     <br>The armies of those I love engirth me and I engirth them, 
@@ -88,7 +87,7 @@
                     Classic
                 </button>
             </section>
-            <section class="fancy" title="This style of font is calligraphic, and looks posh">
+            <section class="fancy" title="This style of font is calligraphic, and looks posh" id="whitmanSnippet">
                 <p>
                     I sing the body electric,
                     <br>The armies of those I love engirth me and I engirth them, 
@@ -99,7 +98,7 @@
                     Fancy
                 </button>
             </section>
-            <section class="minimal" title="This style of font is a sans-serif, and looks restrained">
+            <section class="minimal" title="This style of font is a sans-serif, and looks restrained" id="whitmanSnippet">
                 <p>
                     I sing the body electric, 
                     <br>The armies of those I love engirth me and I engirth them, 
@@ -109,6 +108,12 @@
                 <button class="neutralButton" type="button" id="minimal">
                     Minimal
                 </button>
+            </section>
+            <section >
+                <p id="displayUserPoem"></p>
+
+
+
             </section>
         </form>
 

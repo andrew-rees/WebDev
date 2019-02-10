@@ -166,6 +166,25 @@ function displaySnippet(websiteSnippet, index) {
     $(`#getPoets${index}`).append(snip);
 };
 
+function checkandDisplayUserPoem(id) {
+    var authorBox = $("#author").val();
+    var poemBox = $("#text-area-poem").val();
+    console.log(poemBox);
+    if (authorBox.length == 0 || poemBox.length == 0) {
+        alert("You need to have a title and a poem in the boxes to submit");
+    } else {
+        displayUserPoem(authorBox, poemBox, id);
+    };
+};
+
+function displayUserPoem(name, poem, id) {
+    //$(`#`).remove(); //work out what element to remove
+    var nameDisplay = $("<p>").text(name).attr('id', id).attr('class', 'userPoemDisplayed');
+    $('#displayUserPoem').append(nameDisplay);
+    var poemDisplay = $("<p>").text(poem).attr('id', id).attr('class', 'userPoemDisplayed');
+    $('#displayUserPoem').append(poemDisplay);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     $("#poetButton").click(function () {
@@ -175,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Before splice: " + authors.length);
             authors.splice(authors[randomNumber], 1);
             console.log("After splice: " + authors.length);
-            poetsInformation.push(new Poet(i+1, poet));
+            poetsInformation.push(new Poet(i + 1, poet));
         };
 
         poetsInformation.forEach(value => {
@@ -199,21 +218,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    function checkSubmission() {
-        var authorBox = $("#author").val()
-        console.log(authorBox)
-        var poemBox = $("#text-area-poem").val()
-        console.log(poemBox)
-
-        if (authorBox.length == 0 || poemBox.length == 0) {
-            alert("You need to have a title and a poem in the boxes to submit")
-        } else {
-            console.log("we can submit")
-
-        }
-
-    };
     $("#fancy").click(function () {
-        checkSubmission();
-    })
+        $('.userPoemDisplayed').remove();
+        checkandDisplayUserPoem("fancy");
+    });
+    $("#minimal").click(function () {
+        $('.userPoemDisplayed').remove();
+        checkandDisplayUserPoem("minimal");
+    });
+    $("#classic").click(function () {
+        $('.userPoemDisplayed').remove();
+        checkandDisplayUserPoem("classic");
+    });
+
 }, false);
