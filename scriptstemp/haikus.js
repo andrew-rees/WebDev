@@ -112,7 +112,25 @@ document.addEventListener("DOMContentLoaded", () => {
     var adjectivesBySyllableCount = groupBySyllableCount(adjectives);
     console.log(adjectivesBySyllableCount);
 
+    console.log(nounsBySyllableCount[1][0])
+
+    /* 
+    plan to incorporate syllables into this.
+    - first word still random
+    - second word still random based on first word
+    - then, see how many syllables have left
+    - if 3 or less, see if next word group has a 3er, if not, do a random on
+    - then find a word that has the correct number of left ones
+    - for the 2nd line, do an additional random word
+
+    --when a word is picked, we need to know it's syllable count.
+    --either pick from nouns, find it in nounsBySyllableCount and return the index of the array
+    --or pick from nounsBySC, but how to randomly search thru that?
+    */
+
+
     var thisLine = "" //need to stop this being global
+    let syllableCount = 0
 
     $('#keepHaiku5').hide()
 
@@ -125,8 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function generateLines() { //generates the haiku
         for (i = 1; i < 4; i++) {
-            //console.log(`Line ${i}`);
+            //let syllableCount = 0;
             let wordTypeGenerated = haikuStart();
+            console.log(`Line ${i} syllables: ${syllableCount}`)
+            wordTypeGenerated = nextWord(wordTypeGenerated)
+            console.log(`Line ${i} syllables: ${syllableCount}`)
             for (j = 0; j < 4; j++) {
                 wordTypeGenerated = nextWord(wordTypeGenerated);
             };

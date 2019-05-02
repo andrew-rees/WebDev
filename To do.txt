@@ -1,0 +1,18 @@
+footeh.js:
+- display api results in page in nice way
+- time using suggestion - https://docs.microsoft.com/en-us/previous-versions/dynamicscrm-2016/developers-guide/gg334279(v=crm.8)#parsing-json-returned
+- background on element
+
+
+litcrit.js
+- limit text to 10000 characters and count this on page
+display text box
+- Ask questions of user: what do you like about it? etc
+- give html elements properties eg .id, .href
+- 3 poets display side by side - half there
+
+
+new file canvas
+- button should change values, or should on change of field?
+- 4 fields to change size of box
+

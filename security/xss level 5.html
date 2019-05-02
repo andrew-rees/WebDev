@@ -1,0 +1,58 @@
+<!-- welcome.html -->
+
+<!doctype html>
+<html>
+  <head>
+    <!-- Internal game scripts/styles, mostly boring stuff -->
+    <script src="/static/game-frame.js"></script>
+    <link rel="stylesheet" href="/static/game-frame-styles.css" />
+  </head>
+ 
+  <body id="level5">
+    Welcome! Today we are announcing the much anticipated<br><br>
+    <img src="/static/logos/level5.png" /><br><br>
+ 
+    <a href="/level5/frame/signup?next=confirm">Sign up</a> 
+    for an exclusive Beta.
+  </body>
+</html>
+
+<!-- signup.html -->
+
+<!doctype html>
+<html>
+  <head>
+    <!-- Internal game scripts/styles, mostly boring stuff -->
+    <script src="/static/game-frame.js"></script>
+    <link rel="stylesheet" href="/static/game-frame-styles.css" />
+  </head>
+ 
+  <body id="level5">
+    <img src="/static/logos/level5.png" /><br><br>
+    <!-- We're ignoring the email, but the poor user will never know! -->
+    Enter email: <input id="reader-email" name="email" value="">
+ 
+    <br><br>
+    <a href="{{ next }}">Next >></a> <!--existing-->
+    <a href="{{ foo }}" onerror='alert(`hey o na na na`)' href="{{ next }}">Next >></a> <!--new-->
+  </body>
+</html>
+
+<!-- confirm.html -->
+
+<!doctype html>
+<html>
+  <head>
+    <!-- Internal game scripts/styles, mostly boring stuff -->
+    <script src="/static/game-frame.js"></script>
+    <link rel="stylesheet" href="/static/game-frame-styles.css" />
+  </head>
+ 
+  <body id="level5">
+    <img src="/static/logos/level5.png" /><br><br>
+    Thanks for signing up, you will be redirected soon...
+    <script>
+      setTimeout(function() { window.location = '{{ next }}'; }, 5000);
+    </script>
+  </body>
+</html>
